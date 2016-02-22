@@ -9,10 +9,13 @@ package cse360assign3;
 public class Calculator {
 
 	private int total;
+	private String history;
 	
 	/** Calculator constructor */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		
+		history = "0";
 	}
 	
 	/** Get the total
@@ -31,6 +34,7 @@ public class Calculator {
 	public void add (int value) {
 		
 		total = total + value;
+		history = history + " + " + value;
 	}
 	
 	/** Subtract value from the total
@@ -40,6 +44,7 @@ public class Calculator {
 	public void subtract (int value) {
 		
 		total = total - value;
+		history = history + " - " + value;
 	}
 	
 	/** Multiply total by value
@@ -49,6 +54,7 @@ public class Calculator {
 	public void multiply (int value) {
 		
 		total = total * value;
+		history = history + " * " + value;
 	}
 	
 	/** Divide the total by value
@@ -60,6 +66,8 @@ public class Calculator {
 			total = 0;
 		else
 			total = total / value;
+		
+		history = history + " / " + value;
 	}
 	
 	/** Displays the history
@@ -67,6 +75,6 @@ public class Calculator {
 	 * @return			The history of integers
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
