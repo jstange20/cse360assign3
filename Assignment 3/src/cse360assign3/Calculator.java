@@ -20,7 +20,8 @@ public class Calculator {
 	 * @return total	The integer being worked on	
 	 */
 	public int getTotal () {
-		return 0;
+		
+		return total;
 	}
 	
 	/** Add value to the total
@@ -29,6 +30,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		
+		total = total + value;
 	}
 	
 	/** Subtract value from the total
@@ -37,6 +39,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		
+		total = total - value;
 	}
 	
 	/** Multiply total by value
@@ -45,6 +48,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		
+		total = total * value;
 	}
 	
 	/** Divide the total by value
@@ -52,7 +56,10 @@ public class Calculator {
 	 * @param value		integer to be divided by
 	 */
 	public void divide (int value) {
-		
+		if (value==0)
+			total = 0;
+		else
+			total = total / value;
 	}
 	
 	/** Displays the history
